@@ -104,44 +104,6 @@ unsigned long long find_first(char** list, char* str) {
 
 void make_distinct(char*** list) {
 	if (*list != nullptr) {
-		/*unsigned long long index = 0, deleted = 0, size = get_size(list);
-
-		for (unsigned long long i = size; i > 0; i--) {
-			index = find_first(list, list[i - 1]);
-
-			while (index != i - 1 && list[i-1] != nullptr) {
-				if (index == unsigned long long{} - 1) {
-					break;
-				}
-
-				if (index == 0 && index != i-1) {
-					free(list[i - 1]);
-					list[i - 1] = nullptr;
-				}
-				else if (index != 0) {
-					free(list[index]);
-					list[index] = nullptr;
-				}
-
-				deleted++;
-				index = find_first(list, list[i - 1]);
-			}
-		}
-
-		for (unsigned long long i = 0; i < deleted; i++) {
-			for (unsigned long long j = 0; j < size; j++) {
-				if (list[j] == nullptr) {
-					list[j] = list[j + 1];
-					list[j + 1] = nullptr;
-				}
-			}
-		}*/
-
-		/*char** buff = (char**)realloc(list, (size - deleted) * sizeof(char*));
-		if (buff != nullptr) {
-			list = buff;
-		}*/
-
 		char** copy;
 		init(&copy);
 
