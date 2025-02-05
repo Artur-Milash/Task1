@@ -76,7 +76,7 @@ void delete_from(char** list, char* str) {
 				list = buff;
 			}
 		}
-		else if (size == 1) {
+		else if (size == 1 && strcmp(list[0], str) == 0) {
 			free(list[0]);
 			list[0] = nullptr;
 		}
@@ -106,7 +106,6 @@ void make_distinct(char*** list) {
 	if (*list != nullptr) {
 		char** copy;
 		init(&copy);
-
 
 		unsigned long long size = get_size(*list), count = 0;
 		add_to(&copy, (*list)[0]);
@@ -139,6 +138,7 @@ void replace(char** list, char* before, char* after) {
 				if (buff != nullptr)
 					list[i] = buff;
 				memcpy(list[i], after, strlen(after) + 1);
+				return;
 			}
 		}
 	}
